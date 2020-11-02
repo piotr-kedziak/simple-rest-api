@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Movie < ApplicationRecord
   serialize :ratings, JSON
 
@@ -36,5 +38,4 @@ class Movie < ApplicationRecord
     self.production = info['Production']
     self.website    = info['Website']
   end
-
 end

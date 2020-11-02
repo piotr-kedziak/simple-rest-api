@@ -51,7 +51,7 @@ RSpec.configure do |config|
 
   # fake API calls
   config.before(:each) do
-    stub_request(:any, %r(omdbapi.com)).to_rack FakeOMDB
+    stub_request(:any, /omdbapi.com/).to_rack FakeOMDB
   end
 
   # The settings below are suggested to provide a good initial experience

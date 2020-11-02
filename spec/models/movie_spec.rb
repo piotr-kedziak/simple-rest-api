@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe Movie, type: :model do
@@ -16,7 +18,7 @@ RSpec.describe Movie, type: :model do
   describe '#fetch_from_omdb' do
     context 'with a valid movie title' do
       let!(:movie) { build :movie, title: 'The Lion King' }
-      let!(:data)  { JSON.parse File.open(File.dirname(__FILE__) + '/../support/api/omdb/movie.json', 'rb').read }
+      let!(:data)  { JSON.parse File.open("#{File.dirname(__FILE__)}/../support/api/omdb/movie.json", 'rb').read }
 
       before { movie.fetch_from_omdb }
 
